@@ -65,27 +65,22 @@ export const promptProductionWorkspace = async (promptMessage: string): Promise<
     )
   )
 
-  return (
-    enquirer
-      .prompt({
-        name: 'workspace',
-        message: promptMessage,
-        type: 'select',
-        choices: productionWorkspaces,
-      })
-      // @ts-ignore
-      .then(prop('workspace'))
-  )
+  return enquirer
+    .prompt<{ workspace: string }>({
+      name: 'workspace',
+      message: promptMessage,
+      type: 'select',
+      choices: productionWorkspaces,
+    })
+    .then(prop('workspace'))
 }
 
 export const promptConstraintDuration = async (): Promise<string> => {
   const message = 'The amount of time should be an integer.'
 
-  // @ts-ignore
   return prop(
-    // @ts-ignore
     'time',
-    await enquirer.prompt({
+    await enquirer.prompt<{ time: string }>({
       name: 'proportion',
       message: "What's the amount of time respecting the restriction?",
       validate: (s) => /^[0-9]+$/.test(s) || message,
@@ -99,11 +94,9 @@ export const promptConstraintDuration = async (): Promise<string> => {
 export const promptProportionTrafic = async (): Promise<string> => {
   const message = 'The proportion of traffic directed to a workspace should be an integer between 0 and 10000.'
 
-  // @ts-ignore
   return prop(
-    // @ts-ignore
     'proportion',
-    await enquirer.prompt({
+    await enquirer.prompt<{ proportion: string }>({
       name: 'proportion',
       message: `What's the proportion of traffic initially directed to workspace ${chalk.blue('master')}?
       This should be an integer between 0 and 10000 that corresponds each 1% to 100, i.e. if you want to direct 54.32% of traffic to master, this value should be 5432.

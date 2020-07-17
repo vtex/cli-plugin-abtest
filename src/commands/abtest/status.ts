@@ -10,8 +10,6 @@ export default class ABTestStatus extends CustomCommand {
     ...CustomCommand.globalFlags,
   }
 
-  static args = []
-
   async run() {
     this.parse(ABTestStatus)
     await testAbStatus()

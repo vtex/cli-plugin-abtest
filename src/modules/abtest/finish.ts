@@ -23,20 +23,18 @@ const promptWorkspaceToFinishABTest = () =>
     .then(map(({ WorkspaceB }) => WorkspaceB))
     // @ts-ignore
     .then((workspaces: string[]) =>
-      enquirer.prompt({
+      enquirer.prompt<{ workspace: string }>({
         name: 'workspace',
         message: 'Choose which workspace to finish A/B testing:',
         type: 'select',
         choices: workspaces,
       })
     )
-    // @ts-ignore
     .then(prop('workspace'))
 
 export default async () => {
   await installedABTester()
   const workspace = await promptWorkspaceToFinishABTest()
-  // @ts-ignore
   const promptAnswer = await promptContinue(workspace)
 
   if (!promptAnswer) {
@@ -46,7 +44,6 @@ export default async () => {
   logger.info('Finishing A/B tests')
   logger.info(`Latest results:`)
   await abTestStatus()
-  // @ts-ignore
   await abtester.finish(workspace)
   logger.info(`A/B testing with workspace ${chalk.blue(workspace)} is now finished`)
   logger.info(`No traffic currently directed to ${chalk.blue(workspace)}`)

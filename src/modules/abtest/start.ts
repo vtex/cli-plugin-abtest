@@ -25,22 +25,19 @@ const promptSignificanceLevel = async (): Promise<string> => {
 
   const significanceTimePreviewMap = fromPairs(zip(keys(SIGNIFICANCE_LEVELS), significanceTimePreviews))
 
-  return (
-    enquirer
-      .prompt({
-        name: 'level',
-        message: 'Choose the significance level:',
-        type: 'select',
-        choices: values(
-          mapObjIndexed((value, key) => ({
-            message: `${key} (~ ${formatDays(value as number)})`,
-            value: key,
-          }))(significanceTimePreviewMap)
-        ) as any,
-      })
-      // @ts-ignore
-      .then(prop('level'))
-  )
+  return enquirer
+    .prompt<{ level: string }>({
+      name: 'level',
+      message: 'Choose the significance level:',
+      type: 'select',
+      choices: values(
+        mapObjIndexed((value, key) => ({
+          message: `${key} (~ ${formatDays(value as number)})`,
+          value: key,
+        }))(significanceTimePreviewMap)
+      ) as any,
+    })
+    .then(prop('level'))
 }
 
 const promptContinue = (workspace: string, significanceLevel?: string) => {
