@@ -1,11 +1,12 @@
 {
   "name": "@vtex/cli-plugin-abtest",
   "description": "vtex plugin abtest",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "bugs": "https://github.com/vtex/cli-plugin-abtest/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
+    "numbro": "2.1.0",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -47,7 +48,12 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "abtest": {
+        "description": "ABtest commands. Run 'vtex abtest' to see all subcommands"
+      }
+    }
   },
   "repository": "vtex/cli-plugin-abtest",
   "scripts": {

@@ -1,10 +1,10 @@
-cli-plugin-template
+cli-plugin-abtest
 ===================
 
-vtex plugin template
+vtex plugin abtest
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-template)
+![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
 <!-- toc -->
 * [Usage](#usage)
@@ -17,7 +17,7 @@ $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.0.0 linux-x64 node-v12.18.1
+@vtex/cli-plugin-abtest/0.0.3 linux-x64 node-v12.18.1
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -44,7 +44,7 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.0/build/commands/abtest/finish.ts)_
+_See code: [build/commands/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/finish.ts)_
 
 ## `oclif-example abtest:start`
 
@@ -60,7 +60,7 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.0/build/commands/abtest/start.ts)_
+_See code: [build/commands/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/start.ts)_
 
 ## `oclif-example abtest:status`
 
@@ -76,5 +76,5 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.0/build/commands/abtest/status.ts)_
+_See code: [build/commands/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/status.ts)_
 <!-- commandsstop -->
