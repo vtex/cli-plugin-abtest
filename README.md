@@ -17,7 +17,7 @@ $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.0.3 linux-x64 node-v12.18.1
+@vtex/cli-plugin-abtest/0.0.3 linux-x64 node-v14.0.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -26,17 +26,17 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example abtest:finish`](#oclif-example-abtestfinish)
-* [`oclif-example abtest:start`](#oclif-example-abteststart)
-* [`oclif-example abtest:status`](#oclif-example-abteststatus)
+* [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
+* [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
+* [`oclif-example workspace:abtest:status`](#oclif-example-workspaceabteststatus)
 
-## `oclif-example abtest:finish`
+## `oclif-example workspace:abtest:finish`
 
 Stop all AB testing in current account
 
 ```
 USAGE
-  $ oclif-example abtest:finish
+  $ oclif-example workspace:abtest:finish
 
 OPTIONS
   -h, --help     show CLI help
@@ -44,15 +44,15 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/finish.ts)_
+_See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/workspace/abtest/finish.ts)_
 
-## `oclif-example abtest:start`
+## `oclif-example workspace:abtest:start`
 
 Start AB testing with current workspace
 
 ```
 USAGE
-  $ oclif-example abtest:start
+  $ oclif-example workspace:abtest:start
 
 OPTIONS
   -h, --help     show CLI help
@@ -60,15 +60,15 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/start.ts)_
+_See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/workspace/abtest/start.ts)_
 
-## `oclif-example abtest:status`
+## `oclif-example workspace:abtest:status`
 
 Display currently running AB tests results
 
 ```
 USAGE
-  $ oclif-example abtest:status
+  $ oclif-example workspace:abtest:status
 
 OPTIONS
   -h, --help     show CLI help
@@ -76,5 +76,5 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/abtest/status.ts)_
+_See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.0.3/build/commands/workspace/abtest/status.ts)_
 <!-- commandsstop -->
