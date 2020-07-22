@@ -1,4 +1,4 @@
-import testAbFinish from '../../modules/abtest/finish'
+import testAbFinish from '../../../modules/abtest/finish'
 import { CustomCommand } from 'vtex'
 
 export default class ABTestFinish extends CustomCommand {

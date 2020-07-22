@@ -1,4 +1,4 @@
-import testAbStatus from '../../modules/abtest/status'
+import testAbStatus from '../../../modules/abtest/status'
 import { CustomCommand } from 'vtex'
 
 export default class ABTestStatus extends CustomCommand {

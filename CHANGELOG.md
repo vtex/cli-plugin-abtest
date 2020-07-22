@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.4] - 2020-07-22
+### Changed
+- [command] Move to subcommand of `workspace`
+
 ## [0.0.3] - 2020-07-22
 ### Fixed
 - [dependecy] Add Numbro dependency
