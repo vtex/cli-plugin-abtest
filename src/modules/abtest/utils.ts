@@ -81,7 +81,7 @@ export const promptConstraintDuration = async (): Promise<string> => {
   return prop(
     'time',
     await enquirer.prompt<{ time: string }>({
-      name: 'proportion',
+      name: 'time',
       message: "What's the amount of time respecting the restriction?",
       validate: (s) => /^[0-9]+$/.test(s) || message,
       // @ts-ignore
