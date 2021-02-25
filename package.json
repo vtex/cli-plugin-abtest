@@ -27,7 +27,7 @@
     "ts-jest": "^25.2.1",
     "ts-node": "^8",
     "typescript": "^3.8.2",
-    "vtex": "^2.105.1-beta.8"
+    "vtex": "^2.110.0-beta.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -48,7 +48,12 @@
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
-    ]
+    ],
+    "topics": {
+      "workspace:abtest": {
+        "description": "Creates, finishes, or displays the status of an A/B test. Run 'vtex workspace abtest' to see all 3 subcommands"
+      }
+    }
   },
   "repository": "vtex/cli-plugin-abtest",
   "scripts": {
