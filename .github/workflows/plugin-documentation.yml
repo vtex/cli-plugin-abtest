@@ -18,9 +18,11 @@ jobs:
         with:
           node-version: 12.x
       - name: Install dependencies
-        run: npm install
+        run: yarn install
       - name: Update README
         run: yarn prepack
+      - name: Remove color char from README
+        run: curl 'https://vtex-toolbelt-test.s3.us-east-2.amazonaws.com/removeTerminalColorFromFile.sh' > tmpColorScrip.sh && bash tmpColorScrip.sh && rm tmpColorScrip.sh
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:

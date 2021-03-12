@@ -4,7 +4,7 @@ import enquirer from 'enquirer'
 import numbro from 'numbro'
 import { compose, filter, map, prop } from 'ramda'
 import * as env from 'vtex'
-import { CommandError, createAppsClient, createWorkspacesClient, SessionManager } from 'vtex'
+import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager } from 'vtex'
 import { ABTester } from '../../clients/apps/ABTester'
 
 const DEFAULT_TIMEOUT = 15000
@@ -46,7 +46,7 @@ export const installedABTester = async (): Promise<AppManifest> => {
     return await apps.getApp('vtex.ab-tester@x')
   } catch (e) {
     if (e.response.data.code === 'app_not_found') {
-      throw new CommandError(`The app ${chalk.yellow('vtex.ab-tester')} is \
+      throw createFlowIssueError(`The app ${chalk.yellow('vtex.ab-tester')} is \
 not installed in account ${chalk.green(account)}, workspace \
 ${chalk.blue('master')}. Please install it before attempting to use A/B \
 testing functionality`)

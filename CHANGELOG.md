@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2021-03-12
+
+### Changed
+
+- [Messages] Improve UX
+
 ## [0.0.5] - 2020-08-06
 ### Fixed
 - [start] Prompt abtest time response was undefined
