@@ -17,7 +17,7 @@ $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.0.5 linux-x64 node-v12.18.3
+@vtex/cli-plugin-abtest/0.0.5 linux-x64 node-v12.21.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -32,7 +32,7 @@ USAGE
 
 ## `oclif-example workspace:abtest:finish`
 
-Stop all AB testing in current account
+Stops all A/B tests from running on the current account.
 
 ```
 USAGE
@@ -48,7 +48,7 @@ _See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/c
 
 ## `oclif-example workspace:abtest:start`
 
-Start AB testing with current workspace
+Starts a new A/B test on the current workspace.
 
 ```
 USAGE
@@ -64,7 +64,7 @@ _See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cl
 
 ## `oclif-example workspace:abtest:status`
 
-Display currently running AB tests results
+Displays the results of the active A/B tests.
 
 ```
 USAGE
