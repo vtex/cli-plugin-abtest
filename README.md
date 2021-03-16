@@ -6,42 +6,36 @@ vtex plugin abtest
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.1.2-beta linux-x64 node-v12.21.0
+@vtex/cli-plugin-abtest/0.1.3-beta linux-x64 node-v12.21.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
-  - [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
-  - [`oclif-example workspace:abtest:status`](#oclif-example-workspaceabteststatus)
+* [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
+* [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
+* [`oclif-example workspace:abtest:status`](#oclif-example-workspaceabteststatus)
 
 ## `oclif-example workspace:abtest:finish`
 
-Stops all A/B tests from running on the current [38;2;139;195;74maccount[39m.
+Stops all A/B tests from running on the current account.
 
 ```
 USAGE
@@ -53,11 +47,11 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.2-beta/build/commands/workspace/abtest/finish.ts)_
+_See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.3-beta/build/commands/workspace/abtest/finish.ts)_
 
 ## `oclif-example workspace:abtest:start`
 
-Starts a new A/B test on the current [38;2;139;195;74mworkspace[39m.
+Starts a new A/B test on the current workspace.
 
 ```
 USAGE
@@ -69,7 +63,7 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.2-beta/build/commands/workspace/abtest/start.ts)_
+_See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.3-beta/build/commands/workspace/abtest/start.ts)_
 
 ## `oclif-example workspace:abtest:status`
 
@@ -85,6 +79,5 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.2-beta/build/commands/workspace/abtest/status.ts)_
-
+_See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.3-beta/build/commands/workspace/abtest/status.ts)_
 <!-- commandsstop -->
