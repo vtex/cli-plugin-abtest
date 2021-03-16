@@ -61,7 +61,7 @@
   "scripts": {
     "build-clean": "rm -rf build",
     "build-incremental": "tsc --incremental",
-    "build": "yarn build-clean && yarn tsc",
+    "build": "yarn build-clean && yarn tsc && yarn oclif-dev manifest && oclif-dev readme",
     "ci:prettier-check": "prettier --check --config ./.prettierrc \"./src/**/*.{ts,tsx,js,jsx,json}\"",
     "ci:test": "yarn test --ci",
     "format-lint": "yarn format && yarn lint",

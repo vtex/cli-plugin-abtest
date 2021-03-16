@@ -1,5 +1,4 @@
 cli-plugin-abtest
-===================
 
 vtex plugin abtest
 
@@ -7,11 +6,15 @@ vtex plugin abtest
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
@@ -23,16 +26,22 @@ USAGE
   $ oclif-example COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
-* [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
-* [`oclif-example workspace:abtest:status`](#oclif-example-workspaceabteststatus)
+
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
+  - [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
+  - [`oclif-example workspace:abtest:status`](#oclif-example-workspaceabteststatus)
 
 ## `oclif-example workspace:abtest:finish`
 
-Stops all A/B tests from running on the current account.
+Stops all A/B tests from running on the current [38;2;139;195;74maccount[39m.
 
 ```
 USAGE
@@ -48,7 +57,7 @@ _See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/c
 
 ## `oclif-example workspace:abtest:start`
 
-Starts a new A/B test on the current workspace.
+Starts a new A/B test on the current [38;2;139;195;74mworkspace[39m.
 
 ```
 USAGE
@@ -77,4 +86,5 @@ OPTIONS
 ```
 
 _See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.2-beta/build/commands/workspace/abtest/status.ts)_
+
 <!-- commandsstop -->
