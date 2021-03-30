@@ -1,5 +1,6 @@
 import testAbFinish from '../../../modules/abtest/finish'
-import { CustomCommand, ColorifyConstants } from 'vtex'
+import { CustomCommand } from 'vtex'
+import { ColorifyConstants } from './colors'
 
 export default class ABTestFinish extends CustomCommand {
   static description = `Stops all A/B tests from running on the current ${ColorifyConstants.ID('account')}.`
