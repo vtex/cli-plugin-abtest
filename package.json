@@ -1,7 +1,7 @@
 {
   "name": "@vtex/cli-plugin-abtest",
   "description": "vtex plugin abtest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "bugs": "https://github.com/vtex/cli-plugin-abtest/issues",
   "dependencies": {
     "@oclif/command": "^1",
@@ -59,7 +59,7 @@
   "scripts": {
     "build-clean": "rm -rf build",
     "build-incremental": "tsc --incremental",
-    "build": "yarn build-clean && yarn tsc && OCLIF_COMPILATION=true yarn oclif-dev manifest",
+    "build": "yarn build-clean && yarn tsc && OCLIF_COMPILATION=true yarn oclif-dev manifest --color=256 ",
     "ci:prettier-check": "prettier --check --config ./.prettierrc \"./src/**/*.{ts,tsx,js,jsx,json}\"",
     "ci:test": "yarn test --ci",
     "format-lint": "yarn format && yarn lint",
@@ -67,7 +67,7 @@
     "lint": "eslint ./src --cache --ext .ts --config .eslintrc",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf build && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf build && tsc -b && oclif-dev manifest --color=256  && oclif-dev readme",
     "prepublishOnly": "bash ./scripts/publishLock.sh",
     "test": "jest --passWithNoTests",
     "version": "oclif-dev readme && git add README.md",
