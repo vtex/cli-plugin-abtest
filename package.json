@@ -11,11 +11,11 @@
     "numbro": "2.1.0",
     "cli-ux": "^5.2.1",
     "chalk": "^4.1.0",
-    "yarn": "^1.21.1"
+    "yarn": "^1.21.1",
+    "vtex": "^2.121.0-beta.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
-    "@oclif/config": "^1.12.11",
     "@oclif/plugin-help": "^3",
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
