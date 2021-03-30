@@ -17,7 +17,7 @@ $ npm install -g @vtex/cli-plugin-abtest
 $ vtex COMMAND
 running command...
 $ vtex (-v|--version|version)
-@vtex/cli-plugin-abtest/0.1.16-beta linux-x64 node-v12.21.0
+@vtex/cli-plugin-abtest/0.1.17-beta linux-x64 node-v12.21.0
 $ vtex --help [COMMAND]
 USAGE
   $ vtex COMMAND
@@ -44,7 +44,7 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.16-beta/build/commands/workspace/abtest/finish.ts)_
+_See code: [build/commands/workspace/abtest/finish.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.17-beta/build/commands/workspace/abtest/finish.ts)_
 
 ## `vtex workspace:abtest:start`
 
@@ -60,7 +60,7 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.16-beta/build/commands/workspace/abtest/start.ts)_
+_See code: [build/commands/workspace/abtest/start.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.17-beta/build/commands/workspace/abtest/start.ts)_
 
 ## `vtex workspace:abtest:status`
 
@@ -76,5 +76,5 @@ OPTIONS
   --trace        Ensure all requests to VTEX IO are traced
 ```
 
-_See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.16-beta/build/commands/workspace/abtest/status.ts)_
+_See code: [build/commands/workspace/abtest/status.ts](https://github.com/vtex/cli-plugin-abtest/blob/v0.1.17-beta/build/commands/workspace/abtest/status.ts)_
 <!-- commandsstop -->
