@@ -34,9 +34,8 @@
   },
   "files": [
     "/build",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json",
-    "/yarn.lock"
+    "oclif.manifest.json",
+    "yarn.lock"
   ],
   "homepage": "https://github.com/vtex/cli-plugin-abtest",
   "keywords": [
