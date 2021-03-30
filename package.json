@@ -1,7 +1,7 @@
 {
   "name": "@vtex/cli-plugin-abtest",
   "description": "vtex plugin abtest",
-  "version": "0.1.17-beta",
+  "version": "0.1.18-beta",
   "bugs": "https://github.com/vtex/cli-plugin-abtest/issues",
   "dependencies": {
     "@oclif/command": "^1",
