@@ -5,38 +5,44 @@
   "bugs": "https://github.com/vtex/cli-plugin-abtest/issues",
   "dependencies": {
     "@oclif/command": "^1",
+    "@oclif/color": "^0.x",
+    "@oclif/errors": "^1.2.2",
     "@oclif/config": "^1",
     "numbro": "2.1.0",
+    "cli-ux": "^5.2.1",
+    "tslib": "^2.0.0",
     "chalk": "^4.1.0",
-    "tslib": "^1"
+    "yarn": "^1.21.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.26.0",
+    "@oclif/config": "^1.12.11",
     "@oclif/plugin-help": "^3",
     "@types/jest": "^26.0.3",
     "@types/node": "^14.0.14",
     "@types/ramda": "^0.27.11",
     "@types/semver": "^7.3.1",
-    "eslint": "^6.8.0",
+    "eslint": "^7.3.1",
     "eslint-config-oclif": "^3.1",
+    "@types/supports-color": "^7.2.0",
     "eslint-config-vtex": "^12.3.0",
-    "globby": "^10",
+    "globby": "^11.0.1",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "nodemon-notifier-cli": "https://github.com/Slessi/nodemon-notifier-cli.git",
     "prettier": "^2.0.1",
     "ts-jest": "^25.2.1",
-    "ts-node": "^8",
+    "ts-node": "^9.0.0",
+    "nock": "^13.0.3",
     "typescript": "^3.8.2",
-    "vtex": "^2.122.0-beta"
+    "vtex": "^2.121.0-beta.1"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "files": [
     "/build",
-    "oclif.manifest.json",
-    "yarn.lock"
+    "oclif.manifest.json"
   ],
   "homepage": "https://github.com/vtex/cli-plugin-abtest",
   "keywords": [
@@ -45,7 +51,8 @@
   "license": "MIT",
   "oclif": {
     "commands": "./build/commands",
-    "bin": "oclif-example",
+    "scope": "vtex",
+    "bin": "vtex",
     "devPlugins": [
       "@oclif/plugin-help"
     ],
