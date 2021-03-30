@@ -18,5 +18,4 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn
       - run: yarn build
-      - run: yarn oclif-dev --version
       - run: yarn oclif-dev manifest && cat oclif.manifest.json
