@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import enquirer from 'enquirer'
-import { map, prop } from 'ramda'
+import { map, prop, filter } from 'ramda'
 
 import { logger, promptConfirm, SessionManager } from 'vtex'
 
@@ -21,6 +21,7 @@ const promptWorkspaceToFinishABTest = () =>
   abtester
     .status()
     .then(map(({ WorkspaceB }) => WorkspaceB))
+    .then(filter((workspace: any) => workspace !== undefined))
     // @ts-ignore
     .then((workspaces: string[]) =>
       enquirer.prompt<{ workspace: string }>({
