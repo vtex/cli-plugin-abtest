@@ -20,9 +20,8 @@ ${chalk.blue(workspace)}, account ${chalk.green(account)}. Are you sure?`,
 const promptWorkspaceToFinishABTest = () =>
   abtester
     .status()
+    .then(filter(({ WorkspaceB }) => WorkspaceB !== undefined))
     .then(map(({ WorkspaceB }) => WorkspaceB))
-    .then(filter((workspace: any) => workspace !== undefined))
-    // @ts-ignore
     .then((workspaces: string[]) =>
       enquirer.prompt<{ workspace: string }>({
         name: 'workspace',
