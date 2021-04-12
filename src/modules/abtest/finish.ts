@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import enquirer from 'enquirer'
-import { map, prop } from 'ramda'
+import { map, prop, filter } from 'ramda'
 
 import { logger, promptConfirm, SessionManager } from 'vtex'
 
@@ -20,8 +20,8 @@ ${chalk.blue(workspace)}, account ${chalk.green(account)}. Are you sure?`,
 const promptWorkspaceToFinishABTest = () =>
   abtester
     .status()
+    .then(filter(({ WorkspaceB }) => WorkspaceB !== undefined))
     .then(map(({ WorkspaceB }) => WorkspaceB))
-    // @ts-ignore
     .then((workspaces: string[]) =>
       enquirer.prompt<{ workspace: string }>({
         name: 'workspace',
