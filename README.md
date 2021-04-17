@@ -17,7 +17,7 @@ $ npm install -g @vtex/cli-plugin-abtest
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.1.2 linux-x64 node-v12.22.0
+@vtex/cli-plugin-abtest/0.1.2 linux-x64 node-v12.22.1
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
