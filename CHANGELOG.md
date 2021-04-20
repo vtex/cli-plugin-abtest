@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2021-04-20
+
+### Fixed
+- [start] Allow the use of beta versions of ab-tester
+
 ## [0.1.2] - 2021-04-12
 
 ### Fixed

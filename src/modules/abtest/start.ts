@@ -60,7 +60,9 @@ export default async () => {
   const workspace = await promptProductionWorkspace('Choose production workspace to start A/B test:')
 
   try {
-    if (semver.satisfies(abTesterManifest.version, '>=0.10.0')) {
+    const [version] = abTesterManifest.version.split('-')
+
+    if (semver.satisfies(version, '>=0.10.0')) {
       logger.info(`Setting workspace ${chalk.green(workspace)} to A/B test`)
       const promptAnswer = await promptContinue(workspace)
 
