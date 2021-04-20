@@ -28,23 +28,22 @@ ${chalk.green('master')} and ${chalk.green(workspace)}. Proceed?`,
 export default async () => {
   await checkABTester()
   const workspace = await promptProductionWorkspace('Choose production workspace to start A/B test:')
+  logger.info(`Setting workspace ${chalk.green(workspace)} to A/B test`)
+  const promptAnswer = await promptContinue(workspace)
+
+  if (!promptAnswer) return
+  const proportion = Number(await promptProportionTrafic())
+  const timeLength = Number(await promptConstraintDuration())
 
   try {
-    logger.info(`Setting workspace ${chalk.green(workspace)} to A/B test`)
-    const promptAnswer = await promptContinue(workspace)
-
-    if (!promptAnswer) return
-    const proportion = Number(await promptProportionTrafic())
-    const timeLength = Number(await promptConstraintDuration())
-
     await abtester.customStart(workspace, timeLength, proportion)
-    logger.info(`Workspace ${chalk.green(String(workspace))} in A/B test`)
-    logger.info(`You can stop the test using ${chalk.blue('vtex workspace abtest finish')}`)
-
-    return
   } catch (err) {
     if (err.message === 'Workspace not found') {
       console.log(`Test not initialized due to workspace ${workspace} not found by ab-tester.`)
     }
-  }
+  } 
+  logger.info(`Workspace ${chalk.green(String(workspace))} in A/B test`)
+  logger.info(`You can stop the test using ${chalk.blue('vtex workspace abtest finish')}`)
+
+  return
 }
