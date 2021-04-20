@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- [abtest] Prohibit the use of old versions of vtex.ab-tester
+
 ## [0.1.3] - 2021-04-20
 
 ### Fixed
