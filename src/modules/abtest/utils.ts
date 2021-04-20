@@ -27,11 +27,6 @@ export const formatDuration = (durationInMinutes: number) => {
   return `${days} days, ${hours} hours and ${minutes} minutes`
 }
 
-export const checkABTester = async () => {
-  const abTesterManifest = await installedABTester()
-  checkABTesterVersion(abTesterManifest.version)
-}
-
 const installedABTester = async (): Promise<AppManifest> => {
   try {
     return await apps.getApp('vtex.ab-tester@x')
@@ -54,6 +49,11 @@ const checkABTesterVersion = (version: string) => {
 which is of an excessively old version. Please, use a version newer than ${chalk.green(VERSION_THRESHOLD)} \
 \nTo get the latest version, run ${chalk.hex(COLORS.PINK)('vtex install vtex.ab-tester')}`)
   }
+}
+
+export const checkABTester = async () => {
+  const abTesterManifest = await installedABTester()
+  checkABTesterVersion(abTesterManifest.version)
 }
 
 export const promptProductionWorkspace = async (promptMessage: string): Promise<string> => {

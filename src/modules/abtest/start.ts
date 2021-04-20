@@ -44,6 +44,4 @@ export default async () => {
   }
   logger.info(`Workspace ${chalk.green(String(workspace))} in A/B test`)
   logger.info(`You can stop the test using ${chalk.blue('vtex workspace abtest finish')}`)
-
-  return
 }
