@@ -1,43 +1,14 @@
 import chalk from 'chalk'
-import enquirer from 'enquirer'
-import { compose, fromPairs, keys, map, mapObjIndexed, prop, values, zip } from 'ramda'
 
 import { logger, promptConfirm } from 'vtex'
 
 import {
   abtester,
   checkABTester,
-  formatDays,
   promptConstraintDuration,
   promptProductionWorkspace,
   promptProportionTrafic,
-  SIGNIFICANCE_LEVELS,
 } from './utils'
-
-const promptSignificanceLevel = async (): Promise<string> => {
-  const significanceTimePreviews = await Promise.all(
-    compose<any, number[], Array<Promise<number>>>(
-      map((value) => abtester.preview(value as number)),
-      values
-    )(SIGNIFICANCE_LEVELS)
-  )
-
-  const significanceTimePreviewMap = fromPairs(zip(keys(SIGNIFICANCE_LEVELS), significanceTimePreviews))
-
-  return enquirer
-    .prompt<{ level: string }>({
-      name: 'level',
-      message: 'Choose the significance level:',
-      type: 'select',
-      choices: values(
-        mapObjIndexed((value, key) => ({
-          message: `${key} (~ ${formatDays(value as number)})`,
-          value: key,
-        }))(significanceTimePreviewMap)
-      ) as any,
-    })
-    .then(prop('level'))
-}
 
 const promptContinue = (workspace: string, significanceLevel?: string) => {
   return significanceLevel

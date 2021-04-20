@@ -1,7 +1,6 @@
 import { AppManifest } from '@vtex/api'
 import chalk from 'chalk'
 import enquirer from 'enquirer'
-import numbro from 'numbro'
 import { compose, filter, map, prop } from 'ramda'
 import * as env from 'vtex'
 import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager, COLORS } from 'vtex'
@@ -12,12 +11,6 @@ const VERSION_THRESHOLD = '0.12.0'
 
 const DEFAULT_TIMEOUT = 15000
 
-export const SIGNIFICANCE_LEVELS: Record<string, number> = {
-  low: 0.5,
-  mid: 0.7,
-  high: 0.9,
-}
-
 const { account } = SessionManager.getSingleton()
 
 const options = { timeout: (env.envTimeout || DEFAULT_TIMEOUT) as number }
@@ -25,16 +18,6 @@ const options = { timeout: (env.envTimeout || DEFAULT_TIMEOUT) as number }
 // Clients for the 'master' workspace
 export const abtester = ABTester.createClient({ workspace: 'master' }, { ...options, retries: 3 })
 export const apps = createAppsClient({ workspace: 'master' })
-
-export const formatDays = (days: number) => {
-  let suffix = 'days'
-
-  if (days === 1) {
-    suffix = 'day'
-  }
-
-  return `${numbro(days).format('0,0')} ${suffix}`
-}
 
 export const formatDuration = (durationInMinutes: number) => {
   const minutes = durationInMinutes % 60
