@@ -41,7 +41,7 @@ export default async () => {
     if (err.message === 'Workspace not found') {
       console.log(`Test not initialized due to workspace ${workspace} not found by ab-tester.`)
     }
-  } 
+  }
   logger.info(`Workspace ${chalk.green(String(workspace))} in A/B test`)
   logger.info(`You can stop the test using ${chalk.blue('vtex workspace abtest finish')}`)
 
