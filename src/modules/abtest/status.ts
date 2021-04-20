@@ -4,7 +4,7 @@ import numbro from 'numbro'
 import R from 'ramda'
 import { SessionManager, logger, createTable } from 'vtex'
 
-import { abtester, formatDuration, installedABTester } from './utils'
+import { abtester, formatDuration, checkABTester } from './utils'
 
 interface ABTestStatus {
   ABTestBeginning: string
@@ -119,7 +119,7 @@ const printResultsTable = (testInfo: ABTestStatus) => {
 export default async () => {
   const { account } = SessionManager.getSingleton()
 
-  await installedABTester()
+  await checkABTester()
   let abTestInfo = []
 
   abTestInfo = await abtester.status()

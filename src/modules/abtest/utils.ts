@@ -4,8 +4,11 @@ import enquirer from 'enquirer'
 import numbro from 'numbro'
 import { compose, filter, map, prop } from 'ramda'
 import * as env from 'vtex'
-import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager } from 'vtex'
+import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager, COLORS } from 'vtex'
 import { ABTester } from '../../clients/apps/ABTester'
+import semver from 'semver'
+
+const VERSION_THRESHOLD = '0.12.0'
 
 const DEFAULT_TIMEOUT = 15000
 
@@ -41,7 +44,12 @@ export const formatDuration = (durationInMinutes: number) => {
   return `${days} days, ${hours} hours and ${minutes} minutes`
 }
 
-export const installedABTester = async (): Promise<AppManifest> => {
+export const checkABTester = async () => {
+  const abTesterManifest = await installedABTester()
+  checkABTesterVersion(abTesterManifest.version)
+}
+
+const installedABTester = async (): Promise<AppManifest> => {
   try {
     return await apps.getApp('vtex.ab-tester@x')
   } catch (e) {
@@ -51,8 +59,17 @@ not installed in account ${chalk.green(account)}, workspace \
 ${chalk.blue('master')}. Please install it before attempting to use A/B \
 testing functionality`)
     }
-
     throw e
+  }
+}
+
+const checkABTesterVersion = (version: string) => {
+  const [versionNumber] = version.split('-')
+
+  if (!semver.satisfies(versionNumber, `>${VERSION_THRESHOLD}`)) {
+    throw createFlowIssueError(`You are using ${chalk.yellow(`vtex.ab-tester@${version}`)}, \
+which is of an excessively old version. Please, use a version newer than ${chalk.green(VERSION_THRESHOLD)} \
+\nTo get the latest version, run ${chalk.hex(COLORS.PINK)('vtex install vtex.ab-tester')}`)
   }
 }
 
