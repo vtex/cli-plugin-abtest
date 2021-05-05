@@ -5,7 +5,7 @@ import { map, prop, filter } from 'ramda'
 import { logger, promptConfirm, SessionManager } from 'vtex'
 
 import { default as abTestStatus } from './status'
-import { abtester, installedABTester } from './utils'
+import { abtester, checkABTester } from './utils'
 
 const { account } = SessionManager.getSingleton()
 
@@ -33,7 +33,7 @@ const promptWorkspaceToFinishABTest = () =>
     .then(prop('workspace'))
 
 export default async () => {
-  await installedABTester()
+  await checkABTester()
   const workspace = await promptWorkspaceToFinishABTest()
   const promptAnswer = await promptContinue(workspace)
 

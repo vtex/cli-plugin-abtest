@@ -1,19 +1,15 @@
 import { AppManifest } from '@vtex/api'
 import chalk from 'chalk'
 import enquirer from 'enquirer'
-import numbro from 'numbro'
 import { compose, filter, map, prop } from 'ramda'
 import * as env from 'vtex'
-import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager } from 'vtex'
+import { createFlowIssueError, createAppsClient, createWorkspacesClient, SessionManager, COLORS } from 'vtex'
 import { ABTester } from '../../clients/apps/ABTester'
+import semver from 'semver'
+
+const VERSION_THRESHOLD = '0.12.0'
 
 const DEFAULT_TIMEOUT = 15000
-
-export const SIGNIFICANCE_LEVELS: Record<string, number> = {
-  low: 0.5,
-  mid: 0.7,
-  high: 0.9,
-}
 
 const { account } = SessionManager.getSingleton()
 
@@ -23,16 +19,6 @@ const options = { timeout: (env.envTimeout || DEFAULT_TIMEOUT) as number }
 export const abtester = ABTester.createClient({ workspace: 'master' }, { ...options, retries: 3 })
 export const apps = createAppsClient({ workspace: 'master' })
 
-export const formatDays = (days: number) => {
-  let suffix = 'days'
-
-  if (days === 1) {
-    suffix = 'day'
-  }
-
-  return `${numbro(days).format('0,0')} ${suffix}`
-}
-
 export const formatDuration = (durationInMinutes: number) => {
   const minutes = durationInMinutes % 60
   const hours = Math.trunc(durationInMinutes / 60) % 24
@@ -41,7 +27,7 @@ export const formatDuration = (durationInMinutes: number) => {
   return `${days} days, ${hours} hours and ${minutes} minutes`
 }
 
-export const installedABTester = async (): Promise<AppManifest> => {
+const installedABTester = async (): Promise<AppManifest> => {
   try {
     return await apps.getApp('vtex.ab-tester@x')
   } catch (e) {
@@ -54,6 +40,22 @@ testing functionality`)
 
     throw e
   }
+}
+
+const checkABTesterVersion = (version: string) => {
+  const [versionNumber] = version.split('-')
+
+  if (!semver.satisfies(versionNumber, `>${VERSION_THRESHOLD}`)) {
+    throw createFlowIssueError(`You are using ${chalk.yellow(`vtex.ab-tester@${version}`)}, \
+which is of an excessively old version. Please, use a version newer than ${chalk.green(VERSION_THRESHOLD)} \
+\nTo get the latest version, run ${chalk.hex(COLORS.PINK)('vtex install vtex.ab-tester')}`)
+  }
+}
+
+export const checkABTester = async () => {
+  const abTesterManifest = await installedABTester()
+
+  checkABTesterVersion(abTesterManifest.version)
 }
 
 export const promptProductionWorkspace = async (promptMessage: string): Promise<string> => {
