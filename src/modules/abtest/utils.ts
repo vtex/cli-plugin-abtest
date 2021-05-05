@@ -37,6 +37,7 @@ not installed in account ${chalk.green(account)}, workspace \
 ${chalk.blue('master')}. Please install it before attempting to use A/B \
 testing functionality`)
     }
+
     throw e
   }
 }
@@ -53,6 +54,7 @@ which is of an excessively old version. Please, use a version newer than ${chalk
 
 export const checkABTester = async () => {
   const abTesterManifest = await installedABTester()
+
   checkABTesterVersion(abTesterManifest.version)
 }
 
