@@ -7,6 +7,7 @@ vtex plugin abtest
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
 <!-- toc -->
+* [Developing](#developing)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
