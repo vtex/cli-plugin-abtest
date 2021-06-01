@@ -7,9 +7,18 @@ vtex plugin abtest
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
 <!-- toc -->
+* [Developing](#developing)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+# Developing
+<!-- developing -->
+1. Clone `vtex/toolbelt` and follow the steps on the Contributing section.
+2. Run `yarn link` on this project.
+3. Now run `yarn link "@vtex/cli-plugin-abtest"` on the `vtex/toolbelt` project.
+4. Run `yarn watch` on the `vtex/toolbelt`.
+5. To see what you can do, run `vtex-test workspace abtest --help`.
+<!-- developingstop -->
 # Usage
 <!-- usage -->
 ```sh-session
