@@ -1,4 +1,4 @@
-cli-plugin-abtest
+VTEX Plugin A/B Test
 ===================
 
 vtex plugin abtest
@@ -6,25 +6,48 @@ vtex plugin abtest
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 ![npm](https://img.shields.io/npm/v/@vtex/cli-plugin-abtest)
 
-<!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
-<!-- tocstop -->
-# Usage
-<!-- usage -->
-```sh-session
-$ npm install -g @vtex/cli-plugin-abtest
-$ oclif-example COMMAND
-running command...
-$ oclif-example (-v|--version|version)
-@vtex/cli-plugin-abtest/0.1.4 linux-x64 node-v12.22.1
-$ oclif-example --help [COMMAND]
-USAGE
-  $ oclif-example COMMAND
-...
+
+Usage
+-----
+
+Host: app.io.vtex.com
+
+Initialize a test or add workspaces to a running test:
+
+`/vtex.ab-tester/v0/{{account}}/master/\_v/private/abtesting/initialize`
+
+Body:
+
+```json
+{
+  "InitializingWorkspaces": "Workspace1 Workspace2 Workspace3",    // the workspaces that will be tested; no need to include master
+  "Proportion": 5000,    // 100 times the percentage of traffic you want the master workspace to receive during the first hours of test
+  "Hours": 5,    // the number of hours the test will run with the initially fixed proportion (after that, it starts to update the proportion accordingly to each workspace's performance
+  "Type": "conversion"   // you can also select "revenue", in which case the ab-testing system will look at each workspace's revenue (and not conversion) when updating the traffic
+}
 ```
-<!-- usagestop -->
-# Commands
+
+Get the status of a test:
+
+`/vtex.ab-tester/v0/{{account}}/master/\_v/private/abtesting/status`
+
+Remove a specific workspace from a running test:
+
+`/vtex.ab-tester/v0/{{account}}/master/\_v/private/abtesting/finish/{{finishingWorkspace}}`
+
+To finish a test:
+
+`/vtex.ab-tester/v0/{{account}}/master/\_v/private/abtesting/finish`
+
+Important note
+------
+
+If you add or remove a workspace to/from a running test, the test is reinitialized, which means that the starting date is updated. (edited)
+
+Commands
+--------
 <!-- commands -->
 * [`oclif-example workspace:abtest:finish`](#oclif-example-workspaceabtestfinish)
 * [`oclif-example workspace:abtest:start`](#oclif-example-workspaceabteststart)
