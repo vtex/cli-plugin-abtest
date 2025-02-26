@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cli-plugin-abtest
+  description: Plugin for managing A/B tests in VTEX CLI
+  tags:
+    - typescript
+    - oclif
+  annotations:
+    vtex.com/janus-acronym: ""
+    vtex.com/o11y-os-index: ""
+    grafana/dashboard-selector: ""
+    github.com/project-slug: vtex/cli-plugin-abtest
+    backstage.io/techdocs-ref: dir:../
+spec:
+  lifecycle: stable
+  owner: apps
+  type: cli-plugin
+  dependsOn: []
+  subcomponentOf: toolbelt
