@@ -15,7 +15,7 @@ metadata:
     vtex.com/application-id: 3H0TFOW7
 spec:
   lifecycle: stable
-  owner: apps
+  owner: te-0029
   type: cli-plugin
   dependsOn: []
   subcomponentOf: toolbelt
