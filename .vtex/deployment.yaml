@@ -1,5 +1,5 @@
 - name: cli-plugin-abtest
-  referenceId: PLACEHOLDER
+  referenceId: 3H0TFOW7
   build:
     provider: dkcicd
     pipelines:
