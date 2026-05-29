@@ -1,7 +1,22 @@
 - name: cli-plugin-abtest
+  referenceId: 3H0TFOW7
   build:
     provider: dkcicd
     pipelines:
+      - name: node-ci-v2
+        parameters:
+          sonarProjectName: cli-plugin-abtest
+          nodeVersion: 20-bookworm
+          nodeCommands:
+            - test -- --passWithNoTests --coverage
+        runtime:
+          architecture: amd64
+        when:
+          - event: pull_request
+            source: branch
+          - event: push
+            source: branch
+            regex: master
       - name: techdocs-v1
         parameters:
           entityReference: default/component/cli-plugin-abtest
