@@ -6,6 +6,7 @@
       - name: node-ci-v2
         parameters:
           sonarProjectName: cli-plugin-abtest
+          gitBaseBranchName: "master"
           nodeVersion: 20-bookworm
           nodeCommands:
             - test -- --passWithNoTests --coverage
